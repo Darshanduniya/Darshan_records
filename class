@@ -1,0 +1,30 @@
+class class_a:
+    def function_1(self):
+        print("Calling function_1 from class_a")
+
+    def function_2(self):
+        print("Calling function_2 from class_a")
+
+
+class sub_class_a(class_a):
+    def __init__(self):
+        super().__init__()  # Call the parent class constructor
+
+    def some_method(self):
+        self.function_1()  # Call function_1 from class_a
+
+
+class sub_class_b(class_a):
+    def __init__(self):
+        super().__init__()  # Call the parent class constructor
+
+    def another_method(self):
+        self.function_2()  # Call function_2 from class_a
+
+
+# Usage
+obj_a = sub_class_a()
+obj_a.some_method()  # Outputs: Calling function_1 from class_a
+
+obj_b = sub_class_b()
+obj_b.another_method()  # Outputs: Calling function_2 from class_a
